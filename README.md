@@ -1,14 +1,18 @@
 # php-workspace
 My personal php workspace. Feel free to use or fork
 
-### PHP 7.4
+### Build
+
 ```sh
-docker build -t php-workspace:7 74
-docker run -it -v ${PWD}:/app php-workspace:7
+# Build all
+docker compose build
+
+# or one
+docker compose build {VERSION}
 ```
 
-### PHP 8.0
+### Use
 ```sh
-docker build -t php-workspace:8 80
-docker run -it -v ${PWD}:/app php-workspace:8
+# Recommended run
+docker run -v ${PWD}:/app --user $(id -u):$(id -g) -it --rm php-workspace:83
 ```
