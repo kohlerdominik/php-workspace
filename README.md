@@ -14,5 +14,5 @@ docker compose build {VERSION}
 ### Use
 ```sh
 # Recommended run
-docker run -v ${PWD}:/app --user $(id -u):$(id -g) -it --rm php-workspace:84
+docker run -v ${PWD}:/app:cached --user $(id -u):$(id -g) -it --rm php-workspace:84
 ```
