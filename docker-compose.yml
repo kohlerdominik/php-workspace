@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   '81':
     image: php-workspace:81
@@ -24,3 +22,11 @@ services:
       dockerfile: './83/Dockerfile'
     volumes: 
      - ${PWD}:/app
+
+  '84':
+    image: php-workspace:84
+    build:
+      context: '.'
+      dockerfile: './84/Dockerfile'
+    volumes:
+      - ${PWD}:/app
