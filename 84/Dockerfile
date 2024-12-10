@@ -2,7 +2,7 @@ FROM php:8.4-cli
 
 RUN apt-get update \
 ## Install Tools from the package manager
-  && apt-get install -y  git curl nano coreutils iputils-ping libzip-dev \
+  && apt-get install -y  git curl nano coreutils iputils-ping libzip-dev unzip \
 ## Install PHP extensions from PECL
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
@@ -10,6 +10,7 @@ RUN apt-get update \
     && docker-php-ext-install zip
   
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN mkdir -p /.composer && chmod 777 /.composer
 
 COPY ./conf.d/ $PHP_INI_DIR/conf.d/
 
